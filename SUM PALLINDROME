@@ -1,0 +1,46 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+  public:
+    long long isSumPalindrome(long long n){
+        int i=1;
+        long long sum=n;
+        while(i<=6)
+        {
+            
+            if(sum==reverse(sum))
+                return sum;
+            sum=sum+reverse(sum);
+            i++;
+        }
+        return -1;
+    }
+  public:
+    long long reverse(long long x)
+    {
+        long long rem,rev=0;
+         while(x>0)
+        {
+            rem=x%10;
+            rev=rev*10+rem;
+            x=x/10;
+        }
+        return rev;
+    }
+};
+
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        long long n;
+        cin >> n;
+        Solution ob;
+        cout<<ob.isSumPalindrome(n)<<endl;
+    }
+    return 0;
+}
+
