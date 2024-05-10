@@ -1,0 +1,40 @@
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+class Solution{
+public:
+    long long nPr(int n, int r){
+        long long x=factorial(n)/factorial(n-r);
+        return x;
+    }
+    public:
+    long long factorial(int n)
+    {
+        if(n==0)
+        {
+            return 1;
+        }
+        else
+        {
+            return n*factorial(n-1);
+        }
+    }
+};
+
+
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int n, r;
+        cin>>n>>r;
+        
+        Solution ob;
+        cout<<ob.nPr(n, r)<<endl;
+    }
+    return 0;
+}
