@@ -1,0 +1,36 @@
+//HERE I USED long long TYPE BECAUSE IT CAN ACCEPT ANY LARGE NUMBER AND GIVES THE RESULT
+#include<bits/stdc++.h>
+using namespace std;
+
+
+class Solution
+{
+	public:
+		long long int reverse_digit(long long int n)
+		{
+		    long long r,rev=0,temp=n;
+		    while (n>0)
+		    {
+		        r=n%10;
+		        rev=rev*10+r;
+		        n=n/10;
+		    }
+		    return rev;
+		}
+};
+
+
+int main(){
+    int T;
+    cin >> T;
+    while(T--)
+    {
+    	long long int n;
+    	cin >> n;
+    	Solution ob;
+    	long long int  ans = ob.reverse_digit(n);
+    	cout << ans <<"\n";
+    }
+	return 0;
+}
+}
