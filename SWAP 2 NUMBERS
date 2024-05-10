@@ -1,0 +1,37 @@
+//Pair is used to have 2 types it is generic and it can be accessed with pairname.first->to get first element in pair and pairname.second->to get second element in a pair
+
+#include<bits/stdc++.h> 
+using namespace std; 
+
+
+class Solution{   
+public:
+    pair<int, int> get(int a, int b){
+        int temp=a;
+        a=b;
+        b=temp;
+        pair<int,int> t;
+        t.first=a;
+        t.second=b;
+        return t;
+    }
+};
+
+
+
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int a, b;
+        cin >> a >> b;
+        
+        Solution ob;
+        pair<int, int>p = ob.get(a, b);
+        cout << p.first << ' ' << p.second << endl;
+    
+    }
+    return 0; 
+} 
