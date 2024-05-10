@@ -1,0 +1,43 @@
+//To do this we extract individual digit and find the reverse of a given number 
+//Pallindrome is number where the reverse of a given number is same as a given number
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+class Solution {
+  public:
+    int isDigitSumPalindrome(int n) {
+        int rem,sum=0,rev=0;
+        while(n>0)
+        {
+            rem=n%10;
+            sum=sum+rem;
+            n=n/10;
+        }
+        int temp=sum;
+        while(sum>0)
+        {
+            rem=sum%10;
+            rev=rev*10+rem;
+            sum=sum/10;
+        }
+        if(rev==temp)
+            return 1;
+        else
+            return 0;
+    }
+};
+
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        cin >> N;
+        Solution ob;
+        cout << ob.isDigitSumPalindrome(N) << "\n";
+    }
+}
+
